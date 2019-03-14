@@ -1,4 +1,4 @@
-# For of IGQL repo for our needs
+# Fork of IGQL repo for our needs
 
 # InstagramGraphQL Unofficial API
 Unofficial Instagram GraphQL API to collet data without authentication.
