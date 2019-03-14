@@ -36,7 +36,7 @@ for media_list in user.iterate_more_timeline_media():
 Library is avaible on PyPi so just run
 
 ```
-pip install igql
+pip install InstagramGraphQL
 ```
 
 
