@@ -10,7 +10,7 @@ README = (HERE / 'README.md').read_text()
 # This call to setup() does all the work
 setup(
     name='InstagramGraphQL',
-    version='1.0.1',
+    version='1.0.2',
     description='InstagramGraphQL Unoffical API',
     long_description=README,
     long_description_content_type='text/markdown',
@@ -23,6 +23,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    packages=['igql'],
+    packages=['InstagramGraphQL'],
     install_requires=['anyapi==1.1.1']
 )

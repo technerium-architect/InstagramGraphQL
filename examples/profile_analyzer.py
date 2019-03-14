@@ -1,4 +1,4 @@
-from igql import InstagramGraphQL
+from InstagramGraphQL import InstagramGraphQL
 from collections import Counter
 
 
