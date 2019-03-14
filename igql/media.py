@@ -67,18 +67,19 @@ class Media:
             self._liked_by_has_next_page = True
             self._liked_by_end_cursor = None
         while self._liked_by_has_next_page:
-            params = {
-                'query_hash':
-                self.igql._QUERY_HASHES['load_liked_by'],
-                'variables': json.dumps({
-                    'shortcode': self.shortcode,
-                    'include_reel': True,
-                    'first': 24,
-                },
-                separators=(',', ':')),
+            variables_obj = {
+                'shortcode': self.shortcode,
+                'include_reel': False,
+                'first': 50,
             }
             if self._liked_by_end_cursor:
-                params['after'] = self._liked_by_end_cursor
+                variables_obj['after'] = self._liked_by_end_cursor
+            params = {
+                'query_hash':
+                    self.igql._QUERY_HASHES['load_liked_by'],
+                'variables': json.dumps(variables_obj,
+                                        separators=(',', ':')),
+            }
 
             self.last_response = self.igql.gql_api.query.GET(
                 params=params).json()['data']['shortcode_media']

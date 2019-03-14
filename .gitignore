@@ -1,0 +1,6 @@
+dist
+vendored
+InstagramGraphQL.*
+.idea/
+*.iml
+*.pyc
