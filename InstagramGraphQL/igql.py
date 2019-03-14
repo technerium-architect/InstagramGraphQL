@@ -1,5 +1,5 @@
 from hashlib import md5
-from anyapi import AnyAPI
+from SmoothAPI import AnyAPI
 from requests.exceptions import ChunkedEncodingError
 import json
 
