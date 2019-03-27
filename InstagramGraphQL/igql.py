@@ -27,7 +27,7 @@ class InstagramGraphQL:
 
     def __init__(self, rhx_gis='', sessionid='', proxies=[]):
         self.last_response = {}
-        proxy_configration = {
+        proxy_configuration = {
             'default': None,
             'proxies': proxies,
             'paths': {
@@ -40,7 +40,7 @@ class InstagramGraphQL:
                 'user-agent': self._USER_AGENT,
                 'cookie': f'sessionid={sessionid}',
             },
-            proxy_configration=proxy_configration,
+            proxy_configuration=proxy_configuration,
             scoped_call=self._raise_rate_limit_connreset)
         if not rhx_gis:
             rhx_gis = self._get_shared_data()['rhx_gis']
