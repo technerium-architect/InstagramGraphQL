@@ -1,5 +1,5 @@
 from hashlib import md5
-from SmoothAPI import AnyAPI
+from SmoothAPI import SmoothAPI
 from requests.exceptions import ChunkedEncodingError
 import json
 
@@ -34,7 +34,7 @@ class InstagramGraphQL:
                 '/query': 100
             }
         }
-        self.gql_api = AnyAPI(
+        self.gql_api = SmoothAPI(
             self._BASE_URL,
             default_headers={
                 'user-agent': self._USER_AGENT,
