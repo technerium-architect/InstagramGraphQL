@@ -46,7 +46,7 @@ class InstagramGraphQL:
             rhx_gis = self._get_shared_data()['rhx_gis']
         self.rhx_gis = rhx_gis
 
-        self.gql_api._filter_headers.append(self._set_instagram_gis)
+        self.gql_api._filter_request.append(self._set_instagram_gis)
         self.gql_api._filter_response.append(self._raise_rate_limit_exceed)
         self.gql_api._filter_response.append(self._raise_media_not_found)
         self.gql_api._filter_response.append(self._raise_user_not_found)
