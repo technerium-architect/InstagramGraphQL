@@ -1,4 +1,4 @@
-import igql
+import SmoothAPI
 
 from . import constants
 from .utils import get_value_deep_key, paginator

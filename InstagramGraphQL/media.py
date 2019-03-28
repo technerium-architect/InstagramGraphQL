@@ -1,4 +1,4 @@
-import igql
+import InstagramGraphQL
 
 from . import constants
 from .utils import get_value_deep_key, paginator
@@ -29,7 +29,7 @@ class Media:
         return self.api.query.GET(
             params={
                 "query_hash": constants.LOAD_LIKED_BY["hash"],
-                "variables": igql.InstagramGraphQL.dumps(
+                "variables": InstagramGraphQL.InstagramGraphQL.dumps(
                     {
                         **constants.LOAD_LIKED_BY["variables"],
                         "shortcode": get_value_deep_key(

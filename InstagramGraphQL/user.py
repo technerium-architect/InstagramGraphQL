@@ -1,4 +1,4 @@
-import igql
+import InstagramGraphQL
 
 from . import constants
 from .utils import get_value_deep_key, paginator

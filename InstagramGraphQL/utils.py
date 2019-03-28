@@ -1,6 +1,6 @@
 from hashlib import md5
 
-import igql
+import InstagramGraphQL
 
 from .constants import IG_URL
 
@@ -17,7 +17,7 @@ def get_shared_data(api, path="instagram"):
     response = api.GET(url=f"{IG_URL}/{path}")
     response = response.split("window._sharedData = ")[1]
     response = response.split(";</script>")[0]
-    response = igql.InstagramGraphQL.loads(response)
+    response = InstagramGraphQL.InstagramGraphQL.loads(response)
 
     return response
 
@@ -30,9 +30,9 @@ def paginator(api, data, keys, params):
 
     while has_next_page:
         if isinstance(params["variables"], str):
-            params["variables"] = igql.InstagramGraphQL.loads(params["variables"])
+            params["variables"] = InstagramGraphQL.InstagramGraphQL.loads(params["variables"])
         params["variables"]["after"] = end_cursor
-        params["variables"] = igql.InstagramGraphQL.dumps(params["variables"])
+        params["variables"] = InstagramGraphQL.InstagramGraphQL.dumps(params["variables"])
 
         data = get_value_deep_key(api.query.GET(params=params), keys[1])
 
