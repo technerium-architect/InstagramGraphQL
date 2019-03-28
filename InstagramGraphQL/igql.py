@@ -1,7 +1,7 @@
 import json
 
-from anyapi import AnyAPI
-from anyapi.proxy_handlers import RateLimitProxy
+from SmoothAPI import SmoothAPI
+from SmoothAPI.proxy_handlers import RateLimitProxy
 from requests.exceptions import ChunkedEncodingError
 
 from . import constants
@@ -21,7 +21,7 @@ class InstagramGraphQL:
         self.last_response = {}
         self.max_retries = max_retries
 
-        self.api = AnyAPI(
+        self.api = SmoothAPI(
             constants.BASE_URL,
             default_headers={
                 "user-agent": constants.USER_AGENT,
